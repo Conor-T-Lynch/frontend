@@ -15,7 +15,7 @@ const App = () => {
   const fetchArticles = async (query) => {
     try {
       const params = query ? { search: query } : {};
-      const response = await axios.get('http://18.212.171.144/articles', { params });
+      const response = await axios.get('http://100.26.109.132:3000/articles', { params });
       setArticles(response.data);
     } catch (error) {
       console.error('Error fetching articles:', error);
@@ -42,7 +42,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://18.212.171.144/articles/${id}`);
+      await axios.delete(`http://100.26.109.132:3000/articles/${id}`);
       fetchArticles();
     } catch (error) {
       console.error('Error deleting article:', error);
