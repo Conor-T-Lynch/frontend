@@ -50,14 +50,14 @@ const ArticleForm = ({ article, onSave, fetchArticles, onBack }) => {
       if (article) {
         
         const response = await axios.put(
-          `http://localhost:3000/articles/${article.id}`,
+          `http://18.212.171.144/articles/${article.id}`,
           formData
         );
         setFeedbackMessage('Article updated successfully!');
         console.log('Updated article:', response.data);
       } else {
         
-        await axios.post('http://localhost:3000/articles', formData);
+        await axios.post('http://18.212.171.144/articles', formData);
         setFeedbackMessage('Article created successfully!');
       }
       fetchArticles();
